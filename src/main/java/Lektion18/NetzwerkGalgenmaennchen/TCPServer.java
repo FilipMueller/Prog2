@@ -13,22 +13,7 @@ public class TCPServer {
              BufferedReader br = new BufferedReader(new InputStreamReader(is)))
         {
             while (true) {
-//                char[] word = createWord();
-//                char[] wordFromClient = br.readLine().toCharArray();
-//                if (wordFromClient == word) {
-//                    //finished
-//                } else {
-//                    break;
-//                }
-//                for (int i = 0; i < word.length; i++) {
-//                    if (word[i] == br.read()) {
-//
-//                    }
-//                }
-
-
                 String nextLine = br.readLine();
-
                 System.out.println("SERVER: " + nextLine);
             }
 
