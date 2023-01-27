@@ -1,6 +1,8 @@
 package Lektion14;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import Lektion14.ex1.ex1;
 import org.junit.jupiter.api.Test;
 
 public class ex1Test {

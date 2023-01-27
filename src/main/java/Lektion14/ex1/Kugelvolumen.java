@@ -1,4 +1,4 @@
-package Lektion14;
+package Lektion14.ex1;
 
 public class ex1 {
     public static double berechneKugelvolumen(double radius)

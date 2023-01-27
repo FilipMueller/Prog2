@@ -1,4 +1,4 @@
-package Lektion14;
+package Lektion14.ex2;
 
 public class ex2 {
     static int x;
