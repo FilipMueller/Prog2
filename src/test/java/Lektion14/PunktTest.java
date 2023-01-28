@@ -1,24 +1,31 @@
 package Lektion14;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import Lektion14.ex2.ex2;
+import Lektion14.ex2.Punkt;
 import org.junit.jupiter.api.Test;
 
-public class ex2Test {
+public class PunktTest {
 
     @Test
     public void testVerschiebePunktFails() {
-        Exception exception = assertThrows(RuntimeException.class, () -> {
-            ex2.verschiebePunkt(4, -1);});
-        Exception exception2 = assertThrows(RuntimeException.class, () -> {
-            ex2.verschiebePunkt( 2000, -1);});
-        Exception exception3 = assertThrows(RuntimeException.class, () -> {
-            ex2.verschiebePunkt(4, 2000);});
+        assertThrows(RuntimeException.class, () -> {
+            Punkt.verschiebePunkt(4, -2);
+        });
+        assertThrows(RuntimeException.class, () -> {
+            Punkt.verschiebePunkt(2000, -1);
+        });
+        assertThrows(RuntimeException.class, () -> {
+            Punkt.verschiebePunkt(4, 2000);
+        });
+        assertThrows(RuntimeException.class, () -> {
+            Punkt.verschiebePunkt(-2, 288);
+        });
     }
 
     @Test
     public void testVerschiebePunktWorks() {
-        assertDoesNotThrow(() -> {ex2.verschiebePunkt(4, 2);});
+        assertDoesNotThrow(() -> {
+            Punkt.verschiebePunkt(4, 2);
+        });
     }
 }

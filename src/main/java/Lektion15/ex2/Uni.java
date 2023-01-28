@@ -1,4 +1,4 @@
-package Lektion15;
+package Lektion15.ex2;
 
 public class Uni {
 

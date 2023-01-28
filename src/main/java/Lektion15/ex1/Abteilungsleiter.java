@@ -1,4 +1,4 @@
-package Lektion15;
+package Lektion15.ex1;
 
 public class Abteilungsleiter extends Angestellter {
 

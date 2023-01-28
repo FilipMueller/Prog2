@@ -1,6 +1,6 @@
-package Lektion15;
+package Lektion15.ex2;
 
-public class Student extends Person2{
+public class Student extends Person2 {
 
     public Student(String fach) {
         super(fach);

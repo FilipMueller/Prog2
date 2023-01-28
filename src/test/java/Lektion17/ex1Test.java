@@ -1,7 +1,5 @@
 package Lektion17;
 
-import Lektion14.Adresse;
-import Lektion14.Person;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;

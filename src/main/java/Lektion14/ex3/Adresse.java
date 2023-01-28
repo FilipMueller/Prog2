@@ -1,4 +1,4 @@
-package Lektion14;
+package Lektion14.ex3;
 
 public class Adresse {
 

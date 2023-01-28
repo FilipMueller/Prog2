@@ -1,2 +1,7 @@
-package Lektion21;public class WebsitenAufruf {
+package Lektion21;
+
+public class WebsitenAufruf {
+
 }
+
+

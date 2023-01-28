@@ -1,2 +1,4 @@
-package Lektion21;public class Binbaum {
+package Lektion21;
+
+public class Binbaum {
 }

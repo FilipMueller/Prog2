@@ -1,2 +1,4 @@
-package Lektion21;public class Element {
+package Lektion21;
+
+public class Element {
 }

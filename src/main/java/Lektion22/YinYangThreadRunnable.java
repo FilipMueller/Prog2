@@ -1,17 +1,17 @@
 package Lektion22;
 
-public class YinYangThreadTWO implements Runnable {
+public class YinYangThreadRunnable implements Runnable {
 
     String message;
 
-    public YinYangThreadTWO(String message) {
+    public YinYangThreadRunnable(String message) {
         this.message = message;
     }
     public static void main(String[] args) throws InterruptedException {
-        YinYangThreadTWO yy1 = new YinYangThreadTWO("Yin");
+        YinYangThreadRunnable yy1 = new YinYangThreadRunnable("Yin");
         Thread t1 = new Thread(yy1);
         t1.start();
-        YinYangThreadTWO yy2 = new YinYangThreadTWO("Yang");
+        YinYangThreadRunnable yy2 = new YinYangThreadRunnable("Yang");
         Thread t2 = new Thread(yy2);
         t2.start();
 

@@ -1,6 +1,8 @@
 package Lektion15;
 
 import static org.junit.jupiter.api.Assertions.*;
+import Lektion15.ex1.Abteilungsleiter;
+import Lektion15.ex1.Angestellter;
 import org.junit.jupiter.api.Test;
 
 public class AbteilungTest {
@@ -11,15 +13,14 @@ public class AbteilungTest {
 
     @Test
     public void angestellterTest() {
-        assertEquals(2500, Gerd.grundGehalt);
-        assertEquals(2, Hans.gehaltsFaktor);
-        assertEquals(5000, Hans.gehaltsFaktor * Hans.grundGehalt);
+        assertEquals(2500, Gerd.getGrundGehalt());
+        assertEquals(1, Peter.getGehaltsFaktor());
+        assertEquals(5000, Hans.getGehaltsFaktor() * Hans.getGrundGehalt());
     }
 
     @Test
     public void befoerdernTest() {
         Hans.befoerdern(Gerd);
-        assertEquals(2500 * 1.10, Gerd.gehaltsFaktor * Gerd.grundGehalt);
-
+        assertEquals(2500 * 1.10, Gerd.getGehaltsFaktor() * Gerd.getGrundGehalt());
     }
 }

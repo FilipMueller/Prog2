@@ -1,6 +1,7 @@
 package Lektion14.ex2;
 
-public class ex2 {
+public class Punkt {
+
     static int x;
     static int y;
 
