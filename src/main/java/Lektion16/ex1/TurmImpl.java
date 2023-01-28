@@ -7,6 +7,7 @@ public class TurmImpl extends AbstractFigur implements Turm {
         super(x, y);
     }
 
+    @Override
     public Brett gibErlaubteFelder()
     {
         Brett brett = new Brett();

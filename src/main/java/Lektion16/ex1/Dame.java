@@ -17,8 +17,7 @@ public class Dame extends AbstractFigur implements Laeufer, Turm{
     {
         Brett brettLaeufer = laeufer.gibErlaubteFelder();
         Brett brettTurm = turm.gibErlaubteFelder();
-        Brett kombiniertesBrett = brettTurm.kombiniere(brettLaeufer);
-        return kombiniertesBrett;
+        return brettTurm.kombiniere(brettLaeufer);
     }
 
     public static void main(String[] args)
