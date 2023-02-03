@@ -1,8 +1,8 @@
-package Lektion18;
+package Lektion18.ex1;
 
 import java.io.*;
 
-public class ex1 {
+public class StudiengangSplitter {
     public static void splitStudiengaenge(File dateiname) {
         try (FileOutputStream fos1 = new FileOutputStream("WInfNr.txt");
             OutputStreamWriter osw1 = new OutputStreamWriter(fos1);
@@ -16,12 +16,12 @@ public class ex1 {
             {
                 String line = br.readLine();
                 if (line == null) break;
-                int matrikelnummer = Integer.parseInt(line);
-                if (matrikelnummer >= 5000000 && matrikelnummer <= 5099999) {
+                int matrikelNummer = Integer.parseInt(line);
+                if (matrikelNummer >= 5000000 && matrikelNummer <= 5099999) {
                     osw1.write(line + "\n");
-                } else if (matrikelnummer >= 5100000 && matrikelnummer <= 5199999) {
+                } else if (matrikelNummer >= 5100000 && matrikelNummer <= 5199999) {
                     osw2.write(line + "\n");
-                } else if (matrikelnummer >= 6100000 && matrikelnummer <= 6199999) {
+                } else if (matrikelNummer >= 6100000 && matrikelNummer <= 6199999) {
                     osw3.write(line + "\n");
                 } else {
                     throw new RuntimeException("Invalid Matrikelnummer");
@@ -36,7 +36,7 @@ public class ex1 {
     }
 
     public static File createCSV() {
-        File file = new File("D:\\Studium\\BIN2\\Programmieren II\\Prog2", "MatrNr.txt");
+        File file = new File("D:\\Studium\\BIN2\\Programmieren II\\Prog2\\MatrikelNummern.txt");
         try (Writer wr = new FileWriter("MatrNr.txt")) {
             int anzahlMatrikelnummern = 100;
             for (int i = 0; i < anzahlMatrikelnummern; i++) {

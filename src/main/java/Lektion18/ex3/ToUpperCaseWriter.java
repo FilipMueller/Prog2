@@ -1,4 +1,4 @@
-package Lektion18;
+package Lektion18.ex3;
 
 import java.io.FileWriter;
 import java.io.IOException;
