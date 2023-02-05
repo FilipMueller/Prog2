@@ -11,11 +11,15 @@ public class TCPClient {
              PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(connectionToServer.getOutputStream()));
              Scanner scanner = new Scanner(System.in))
         {
-            while (true) {
+            boolean gameCompleted = false;
+            while (!gameCompleted) {
                 String inputFromClient = scanner.nextLine();
                 printWriter.println(inputFromClient);
                 printWriter.flush();
                 String inputFromServer = bufferedReader.readLine();
+                if (inputFromServer.contains("You Won!")) {
+                    gameCompleted = true;
+                }
                 System.out.println(inputFromServer);
             }
         } catch (Exception e) {

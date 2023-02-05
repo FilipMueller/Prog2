@@ -1,48 +1,46 @@
 package Lektion18.ex2;
 
-import java.util.Scanner;
-
 public class Hangman {
+
     char[] charsGuessed;
     char[] chosenWord;
+    String chosenWordString;
+    boolean gameComplete;
+
+    public String getChosenWordString() {
+        return chosenWordString;
+    }
+
+    public char[] getCharsGuessed() {
+        return charsGuessed;
+    }
 
     public Hangman() {
         String[] words = {"PROGRAMMIEREN", "HOCHSCHULE", "JAVA", "SERVER", "INTELLIJ"};
         int randFactor = (int) (Math.random() * 5);
+        chosenWordString = words[randFactor];
         chosenWord = words[randFactor].toCharArray();
-        charsGuessed = chosenWord;
+        charsGuessed = words[randFactor].toCharArray();
+        gameComplete = false;
         for (int i = 0; i < chosenWord.length; i++) {
             charsGuessed[i] = '_';
         }
-        printWord();
-    }
-
-    public void printWord() {
-        for (char x : charsGuessed) {
-            System.out.print(x);
-        }
-        System.out.println();
     }
 
     public void updateWord(String input) {
-        for (int i = 0; i < chosenWord.length; i++) {
-            if (chosenWord[i] == input.charAt(0)) {
-                System.out.println("Korrect character!");
-                charsGuessed[i] = chosenWord[i];
-                printWord();
-                break;
+        if (chosenWordString.contains(input)) {
+            int missingCharacters = 0;
+            for (int i = 0; i < chosenWord.length; i++) {
+                if (chosenWord[i] == input.charAt(0)) {
+                    charsGuessed[i] = chosenWord[i];
+                }
+                if (charsGuessed[i] == '_') {
+                    missingCharacters++;
+                }
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Hangman hangman = new Hangman();
-        Scanner scanner = new Scanner(System.in);
-        String consoleInput;
-
-        while (true) {
-           consoleInput = scanner.nextLine();
-           hangman.updateWord(consoleInput);
+            if (missingCharacters == 0) {
+                gameComplete = true;
+            }
         }
     }
 }

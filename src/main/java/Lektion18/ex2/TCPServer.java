@@ -11,10 +11,15 @@ public class TCPServer {
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
              PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(connection.getOutputStream())))
         {
-            while (true) {
+            Hangman hangman = new Hangman();
+            while (!hangman.gameComplete) {
                 String inputFromClient = bufferedReader.readLine();
-                System.out.println("Message from Client: " + inputFromClient);
-                printWriter.println("OK");
+                hangman.updateWord(inputFromClient);
+                if (hangman.gameComplete) {
+                    printWriter.println("You Won! The Word is: " + hangman.getChosenWordString());
+                    printWriter.flush();
+                }
+                printWriter.println(hangman.getCharsGuessed());
                 printWriter.flush();
             }
         } catch (Exception e) {
